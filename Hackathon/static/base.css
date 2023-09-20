@@ -1,0 +1,638 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@500&display=swap');
+
+body{
+    font-family: 'Cormorant';
+    background-image: url("./mainbg.jpg");
+    background-size:cover;
+}
+
+.registaration{
+    background-image: url("./seagreenbg.png");
+}
+
+.login{
+    background-image: url("./seagreenbg.png");
+}
+
+.home{
+    background-image: none;
+}
+
+.profile{
+    background-image: none;
+}
+
+.create{
+    background-image: none;
+}
+
+.register-link{
+    border: 3px solid saddlebrown;
+    background-color: white;
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    height: 10%;
+    width: 25%;
+}
+
+.register-link a{
+    text-decoration: none;
+    color: lightcoral;
+    font-size: 150%;
+    font-family: 'Cormorant';
+}
+
+.login-link{
+    border: 3px solid saddlebrown;
+    background-color: white;
+    position: absolute;
+    top: 55%;
+    left: 35%;
+    height: 10%;
+    width: 25%;
+}
+
+.login-link a{
+    text-decoration: none;
+    color: lightcoral;
+    font-size: 150%;
+    font-family: 'Cormorant';
+}
+
+.register-link:hover{
+    background-color: rgb(255, 255, 188);
+}
+
+.login-link:hover{
+    background-color: rgb(253, 253, 182);
+}
+
+h1{
+    color: coral;
+    position: absolute;
+    left: 25%;
+    top: 12%;
+    font-size: 400%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.register-form{
+    display: inline-block;
+    background-color: white;
+    overflow-y: auto;
+    text-align: left;
+    position: absolute;
+    left: 23%;
+    height: 80%;
+    width: 50%;
+    margin: 25px;
+    border-radius: 30px;
+    top: 12%;
+    word-wrap: break-word;
+    padding: 20px;
+}
+
+.register-form button{
+    color: white;
+    background-color: rgb(83, 179, 125);
+    border: none;
+    border-radius: 4px;
+    position: absolute;
+    left: 15%;
+    width: 70%;
+    height: 8%;
+    font-size: 125%;
+    bottom: 10%;
+    font-family: 'Cormorant';
+}
+
+.register-form input{
+    position: absolute;
+    height: 4%;
+    width: 50%;
+    left: 40%;
+    margin-top: -20px;
+}
+
+ul{
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.register-title{
+    position: absolute;
+    color: rgb(83, 179, 125);
+    left: 25%;
+    font-size: 30px;
+}
+
+.invalid-feedback{
+    display: inline-block;
+    top: 50%;
+    color: red;
+}
+
+.register-form a{
+    text-decoration: none;
+    color: rgb(83, 179, 125);
+}
+
+#id_Retailer{
+    margin-top: 20px;
+}
+
+.login-form{
+    display: inline-block;
+    background-color: white;
+    overflow-y: auto;
+    text-align: left;
+    position: absolute;
+    left: 23%;
+    height: 60%;
+    width: 50%;
+    margin: 25px;
+    border-radius: 30px;
+    top: 12%;
+    word-wrap: break-word;
+    padding: 20px;
+}
+
+.login-form button{
+    color: white;
+    background-color: rgb(83, 179, 125);
+    border: none;
+    border-radius: 4px;
+    position: absolute;
+    left: 15%;
+    width: 70%;
+    height: 8%;
+    font-size: 125%;
+    bottom: 10%;
+    font-family: 'Cormorant';
+}
+
+.login-form input{
+    position: absolute;
+    height: 4%;
+    width: 50%;
+    left: 40%;
+    margin-top: -20px;
+}
+
+.login-title{
+    position: absolute;
+    color: rgb(83, 179, 125);
+    left: 25%;
+    font-size: 30px;
+}
+
+.invalid-feedback{
+    display: inline-block;
+    top: 50%;
+    color: red;
+}
+
+.login-form a{
+    text-decoration: none;
+    color: rgb(83, 179, 125);
+}
+
+.alert-block{
+    position: absolute;
+    color: red;
+    top: 60%;
+}
+
+.alert-block ul{
+    list-style-type: none;
+}
+
+#navbar{
+    display: inline;
+}
+#navbar *{
+    display:inherit;
+}
+#navbar ul{
+    list-style-type: none;
+    background-color: #0ceba1;
+    padding: 0% 0% 0% 0%;
+    display:inline-block;
+    width: 105%;
+    margin-left:-10px;
+    margin-top: -15px;
+}
+#navbar li{
+    margin:0;
+    padding: 0 4%;
+    }
+#navbar a{
+    font-size: 150%;
+    text-decoration: none;
+    color:white;
+    margin-top: 15%;
+    padding: 0% 0%;
+}
+
+#hint_id_new_password1{
+    display: none;
+}
+
+.text-muted{
+    display:none;
+}
+
+.stats{
+    text-align: center;
+    position: absolute;
+    left: 25%;
+}
+
+.stats li{
+    padding: 7% 0%;
+    font-size: 150%;
+    color:#1ac28a;
+}
+
+#passChangeBtn{
+    border: none;
+    background-color: #0ceba1;
+    color: white;
+    width: 100%;
+    height: 50px;
+    font-size: larger;
+    font-family: 'Cormorant';
+}
+
+.product-form{
+    display: inline-block;
+    background-color: white;
+    overflow-y: auto;
+    text-align: left;
+    position: absolute;
+    left: 23%;
+    height: 80%;
+    width: 50%;
+    margin: 25px;
+    border-radius: 30px;
+    top: 12%;
+    word-wrap: break-word;
+    padding: 20px;
+    font-size: 120%;
+}
+
+.product-form button{
+    color: white;
+    background-color: rgb(83, 179, 125);
+    border: none;
+    border-radius: 4px;
+    position: absolute;
+    left: 15%;
+    width: 70%;
+    height: 8%;
+    font-size: 125%;
+    bottom: 10%;
+    font-family: 'Cormorant';
+}
+
+.product-form input{
+    position: absolute;
+    height: 4%;
+    width: 50%;
+    left: 40%;
+    margin-top: -20px;
+}
+
+.product-title{
+    position: absolute;
+    color: rgb(83, 179, 125);
+    left: 25%;
+    font-size: 30px;
+}
+
+#product-desc{
+   padding: 8px 2px;
+}
+
+#product-image{
+    max-width: 200px;
+    height: auto;
+}
+
+.search-bar{
+    border: 2px solid coral;
+    height: 50px;
+    width: 90%;
+    background-color: rgb(253, 202, 202);
+    font-size: 20px;
+    outline: none;
+    font-family: 'Cormorant';
+  }
+
+.query-btn{
+    position: absolute;
+    height: 56px;
+    border: none;
+    border: 2px solid coral;
+    width: 5%;
+    left: 90%;
+    background-color: rgb(255, 136, 115);
+}
+
+.search-item{
+    background-image: linear-gradient(to top , rgb(15, 211, 195) , #0ceba1);
+    text-align: left;
+    color: azure;
+    font-size: 25px;
+    border-radius: 10px;
+    padding: 10px 10px;
+    margin-top: 5%;
+}
+
+.search-item ul li{
+    padding: 1% 0%;
+}
+
+.productimg{
+    display: none;
+}
+
+.cart{
+    background-image: none;
+}
+
+.cart-item{
+    background-image: linear-gradient(to top , rgb(15, 211, 195) , #0ceba1);
+    text-align: center;
+    color: azure;
+    font-size: 25px;
+    border-radius: 10px;
+    padding: 0px 0px;
+    margin-top: 2%;
+}
+
+.cart-item ul li{
+    padding: 0% 0%;
+}
+
+#active {
+    height: 45px;
+    background-color: coral;
+}
+
+.add2cart {
+    color: white;
+    background-color:#0ceba1;
+    border: none;
+    border-radius: 4px;
+    width: 100%;
+    height: 8%;
+    font-size: 100%;
+    font-family: 'Cormorant';
+    padding: 10px 0px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+ .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+  
+ input:checked + .slider {
+    background-color: #2196F3;
+}
+  
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+  
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+ }
+  
+.slider.round {
+    border-radius: 34px;
+ }
+  
+.slider.round:before {
+    border-radius: 50%;
+}
+
+#msg-btn{
+    background-color: rgba(255, 0, 0, 0);
+    border: none;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+}
+
+#msg-btn img{
+    width: inherit;
+    height: inherit;
+}
+
+#text-chat{
+    position: fixed;
+    right: 5%;
+    bottom: 0%;
+    background-color: white;
+    height: 55%;
+    width: 25%;
+    border-radius: 2px;
+    display: none;
+}
+
+#text-chat input{
+    width: 97.5%;
+}
+
+#text-chat button{
+    border: none;
+    background-color: #0ceba1;
+    color: white;
+    width: 100%;
+    height: 30px;
+}
+
+#msg-area{
+    height: 90%;
+    width: auto;
+    border: 1px solid black;
+    background-color: rgb(255, 255, 255);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#msg-area li{
+    color: black;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+#text-form{
+    position: relative;
+    bottom: 10%;
+}
+
+@media only screen and (max-width: 500px){
+    h1{
+        text-align: center;
+        font-size: 300%;
+        position: absolute;
+        left: 0%;
+    }
+
+    body{
+        font-family: 'Cormorant';
+        background-image: url("./seagreenbg.png");
+        background-size:cover;
+    }
+
+    .register-link{
+        width: 90%;
+        left: 5%;
+        top: 50%;
+    }
+
+    .login-link{
+        width: 90%;
+        left: 5%;
+        top: 65%;
+    }
+
+    .register-form{
+        background-color: white;
+        text-align: left;
+        height: 80%;
+        width: 90%;
+        border-radius: 30px;
+        top: 12%;
+        position: relative;
+        left: -10%;
+    }
+
+    .register-title{
+        text-align: center;
+        left: 10%;
+    }
+
+    #div_id_password2 label{
+        font-size: 75%;
+    }
+
+    .login-form{
+        background-color: white;
+        text-align: left;
+        height: 300px;
+        width: 90%;
+        border-radius: 30px;
+        top: 40%;
+        position: relative;
+        left: -10%;
+    }
+
+    .login-title{
+        text-align: center;
+        left: 10%;
+    }
+
+    #navbar li{
+        padding: 1% 3%;
+        font-size: 80%;
+    }
+
+    #navbar ul{
+        width: 110%;
+    }
+
+    .query-btn{
+        position: absolute;
+        height: 35px;
+        border: none;
+        border: 2px solid coral;
+        width: 15%;
+        left: 75%;
+        background-color: rgb(255, 136, 115);
+    }
+
+    .stats{
+        text-align: left;
+        position: absolute;
+        left: -10%;
+        font-size: 70%;
+    }
+
+    #passChangeBtn{
+        font-size: 100%;
+        font-family: 'Cormorant';
+    }
+
+    .search-bar{
+        height: 30px;
+      }
+
+    .cart-item{
+        text-align: left;
+        font-size: 20px;
+      }
+
+      .search-item{
+          font-size: 100%;
+      }
+
+      .product-form{
+        text-align: left;
+        height: 325px;
+        width: 100%;
+        top: 12%;
+        position: relative;
+        left: -10%;
+    }
+
+    .product-title{
+        text-align: center;
+        left: 20%;
+    }
+
+    .product-form button{
+        top: 85%;
+        height: 40px;
+    }
+
+}

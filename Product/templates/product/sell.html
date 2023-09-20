@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="{% static 'favicon.png' %}"/>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a product</title>
+</head>
+<body class="create">
+    {% load crispy_forms_tags %}
+    {%if retail == True%}
+    <div id="navbar">
+        <ul>
+            <li>
+                <a href="/home">Home</a>
+            </li>
+            <li>
+                <a href="/profile">Profile</a>
+            </li>
+            <li>
+                <a href="/cart">Cart</a>
+            </li>
+            {% if retail == True %}
+            <li id="active">
+                <a href="/create">Sell</a>
+            </li>
+            {%endif%}
+            <li>
+                <a href="/logout">Logout</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="product-form">
+    <form method="POST" enctype="multipart/form-data">
+        <label class="product-title">Create A Product</label>
+        <br><br><br>
+        {% csrf_token %}
+        {{ form|crispy|linebreaks }}
+        <br>
+        <button type="submit" class="product-btn">Create</button>
+    </form>
+</div>
+    {%else%}
+    <h1>You need to have a registered account to make products</h1>
+    {%endif%}
+    <script src="{% static 'darkMode.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+</body>
+</html>

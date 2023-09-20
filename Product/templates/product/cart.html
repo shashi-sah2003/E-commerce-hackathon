@@ -1,0 +1,56 @@
+{% load static %}
+{% load custom_filters %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="{% static 'favicon.png' %}"/>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+</head>
+<body class="cart">
+    <div id="navbar">
+        <ul>
+            <li>
+                <a href="/home">Home</a>
+            </li>
+            <li>
+                <a href="/profile">Profile</a>
+            </li>
+            <li id="active">
+                <a href="/cart">Cart</a>
+            </li>
+            {% if retail == True %}
+            <li>
+                <a href="/create">Sell</a>
+            </li>
+            {%endif%}
+            <li>
+                <a href="/logout">Logout</a>
+            </li>
+        </ul>
+    </div>
+{% if carts|length >= 1 %}
+        <ul>
+            {% for cart in carts %}
+            <li class="cart-item">
+                {{cart.product}}
+                <br>
+                ₹ {{cart.cost}}
+            </li>
+            {%endfor%}
+            <li>
+                <br>
+                Net Total: ₹ {{carts|add}}
+            </li>
+        </ul>
+{%else%}
+<div class="cart-item">
+    <p>There are no products in your cart</p>
+</div>
+{% endif %}
+<script src="{% static 'darkMode.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+</body>
+</html>

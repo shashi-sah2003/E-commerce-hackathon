@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="{% static 'favicon.png' %}"/>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+</head>
+<body class="profile">
+{%if user.is_authenticated%}
+
+<div id="navbar">
+    <ul>
+        <li>
+            <a href="/home">Home</a>
+        </li>
+        <li id="active">
+            <a href="/profile">Profile</a>
+        </li>
+        <li>
+            <a href="/cart">Cart</a>
+        </li>
+        {% if retail == True %}
+        <li>
+            <a href="/create">Sell</a>
+        </li>
+        {%endif%}
+        <li>
+            <a href="/logout">Logout</a>
+        </li>
+    </ul>
+</div>
+
+<ul class='stats'>
+    {%if retail == True%}
+    <li>Account Type: Retailer</li>
+    {%else%}
+    <li>Account Type: Customer</li>
+    {%endif%}
+    <li>Username: {{username}}</li>
+    <li>Registered Email: {{email}}</li>
+    <li>
+        <label for="">Dark Mode</label>
+        <label class="switch"> 
+        <input type="checkbox" id='theme-setter'>
+        <span class="slider round"></span>
+      </label>
+    </li>
+    <li><Button id="passChangeBtn" onclick="location.href = '/change-password/'">Change Password</Button></li>
+</ul>
+
+{%else%}
+
+<h1>Please Login <a href="/login">Here</a> To Get Access To The Website</h1>
+
+{%endif%}
+<link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+<script src="{% static 'darkModeSetter.js' %}"></script>
+<script src="{% static 'darkMode.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+{% load static %}
+{% load custom_filters %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="icon" type="image/png" href="{% static 'favicon.png' %}"/>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body class="home">
+{%if user.is_authenticated%}
+
+<div id="navbar">
+    <ul>
+        <li id="active">
+            <a href="/home">Home</a>
+        </li>
+        <li>
+            <a href="/profile">Profile</a>
+        </li>
+        <li>
+            <a href="/cart">Cart</a>
+        </li>
+        {% if retail == True %}
+        <li>
+            <a href="/create">Sell</a>
+        </li>
+        {%endif%}
+        <li>
+            <a href="/logout">Logout</a>
+        </li>
+    </ul>
+</div>
+
+<form action="{% url 'query' %}" method="GET">
+<input type="text" placeholder=" Search For Products...." class="search-bar" name="search">
+<button class="query-btn">🔍</button>
+</form>
+
+<button id="msg-btn"><img src="/static/msg.png" alt="Message Image"></button>
+
+<div id="text-chat">
+    <div id="msg-area">
+        
+    </div>
+
+    <form action="" id="text-form">
+        <input type="text" placeholder="Send A Message To?" id="reciever-user"> <br>
+        <input type="text" placeholder="Enter Your Message Here" id="text-message-field"> <br>
+        <input type="submit" id="sendMsg" value="Send">Send <br>
+    </form>
+</div>
+
+
+{% if products|length >= 1%}
+
+{%  for dict in products  %}
+
+<div class="search-item">
+    <ul>
+        <li>
+            Product ID: {{dict.id}}
+        </li>
+        <li>
+            Product Name: {{dict.productName}}
+        </li>
+        <li>
+            Description: {{dict.productDescription}}
+        </li>
+        <li>
+            Product Cost: ₹{{dict.productCost}}
+        </li>
+        <li>
+            <img id="product-image" src="/media/{{dict.productImage}}" alt="Product Image" style="width:200px;height:auto;">
+            <br>
+            <button style="color: white;background-color:#0ceba1;border: none;border-radius: 4px;width: 8%;height: 2.5%;font-size: 60%;font-family: 'Cormorant';padding: 10px 0px;"><a href="/media/{{dict.productImage}}" target="_blank" style="text-decoration: none;color: white;"> View Full Image</a></button>
+        </li>
+        <li>
+            Sold By: {{dict.poster_id|idToUser}}
+        </li>
+        <li>
+            <form action="{% url 'cart' %}" method="GET">
+                <button type="submit" name='mybtn2' value={{dict.id|idToProduct}} class="add2cart">Add To Cart</button>
+                </form>
+        </li>
+    </ul>
+</div>
+{%endfor%}
+
+{% elif  user.is_authenticated == True %}
+
+<p>No avaliable products searched</p>
+
+{% endif %}
+
+{%else%}
+
+<h1>Please Login <a href="/login">Here</a> To Get Access To The Website</h1>
+
+{%endif%}
+
+<script src="{% static 'darkMode.js' %}"></script>
+<script src="{% static 'chatMenu.js' %}"></script>
+<script src="{% static 'requests.js' %}"></script>
+<script src="{% static 'messageRequest.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+</body>
+</html>

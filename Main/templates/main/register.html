@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="{% static 'favicon.png' %}"/>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body class="registaration">
+{% load crispy_forms_tags %}
+<div class="register-form">
+    <form method="POST" class="form-group">
+        <label class="register-title">Register An Account</label>
+        <br><br><br>
+        {% csrf_token %}
+        {{ form|crispy|linebreaks }}
+        {{ profileForm|crispy|linebreaks }}
+        <br>
+        <button type="submit" class="register-btn">Register</button>
+        <br>
+        <label for="">Already Have An Account? Log In <a href="/login">Here</a></label>
+    </form>
+</div>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+
+</body>
+</html>
